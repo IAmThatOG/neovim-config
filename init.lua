@@ -1,0 +1,11 @@
+require("iamthatog")
+
+print("=========== Hello OG! ===========")
+print("• Check out your todos ✅ ")
+print("• Work hard ⚙️ ")
+print("• Do the hard things 💪 ")
+print("• Have fun and enjoy the process 😎 ")
+print("• Don't stop learning 📚 ")
+print("You are smart 🧠 ")
+print("=================================")
+print("#moonshotMindset! 🚀")
