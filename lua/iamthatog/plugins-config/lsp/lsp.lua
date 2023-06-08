@@ -99,7 +99,7 @@ local on_attach = function(client, bufnr)
   keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- go to implementation
   keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  keymap.set('n', '<C-h>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  keymap.set({'n', 'i'}, '<C-h>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   -- keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actions
   keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   -- keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
@@ -113,6 +113,7 @@ local on_attach = function(client, bufnr)
   -- keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
   keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
   keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand sides
+  keymap.set('n', '<C-m>', ":Mason<CR>", opts) -- to open Mason for lsps installation
 
   -- typescript specific keymaps (e.g. rename file and update imports)
   if client.name == "tsserver" then
@@ -195,10 +196,17 @@ lspconfig["gopls"].setup({
   on_attach = on_attach,
 })
 
+-- configure prisma language server
 lspconfig["prismals"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
+
+-- configure csharp language server
+-- lspconfig["csharp_ls"].setup({
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+-- })
 
 
 -- (Optional) Configure lua language server for neovim;
