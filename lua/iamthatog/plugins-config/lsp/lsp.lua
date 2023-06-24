@@ -69,10 +69,10 @@ local cmp_mapping = {
   ["<CR>"] = cmp.mapping.confirm({ select = true }),
 }
 
-local lsp_cmp_mappings = lsp.defaults.cmp_mappings(cmp_mapping)
-
 cmp_mapping['<Tab>'] = nil
 cmp_mapping['<S-Tab>'] = nil
+
+local lsp_cmp_mappings = lsp.defaults.cmp_mappings(cmp_mapping)
 
 lsp.setup_nvim_cmp({
   mapping = lsp_cmp_mappings
@@ -203,10 +203,32 @@ lspconfig["prismals"].setup({
 })
 
 -- configure csharp language server
--- lspconfig["csharp_ls"].setup({
---   capabilities = capabilities,
---   on_attach = on_attach,
--- })
+lspconfig["csharp_ls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- configure pylsp server
+lspconfig['pylsp'].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    pylsp = {
+      plugins = {
+        autopep8 = {
+          enabled = false
+        },
+        flake8 = {
+          enabled = false
+        },
+        yapf = {
+          enabled = true,
+          args = '--style={based_on_style: google column_limit: 120}'
+        }
+      }
+    }
+  }
+})
 
 
 -- (Optional) Configure lua language server for neovim;

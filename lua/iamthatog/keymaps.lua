@@ -47,9 +47,6 @@ keymap.set("n", "<C-u>", "<C-u>zz", n_opts) -- jump lines up
 keymap.set("n", "n", "nzzzv", n_opts) -- move up to occurences of search word
 keymap.set("n", "N", "Nzzzv", n_opts) -- move down to occurences of search word
 
---vim.keymap.set("x", "<leader>p", "\"_dP")
-keymap.set("x", "<leader>p", [["_dP]]) -- paste replace after copy
-
 -- others
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", n_opts) -- split window vertically
@@ -70,10 +67,14 @@ keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', n_opts)
 keymap.set('n', '<leader>gs', ':Gitsigns<leader>', n_opts)
 
 --bufferline
-keymap.set('n', 'b<Right>', ':BufferLineCycleNext<CR>', n_opts)
-keymap.set('n', 'b<Left>', ':BufferLineCyclePrev<CR>', n_opts)
-keymap.set('n', 'bn', ':BufferLineMoveNext<CR>', n_opts)
-keymap.set('n', 'bp', ':BufferLineMovePrev<CR>', n_opts)
+keymap.set('n', 'bl', ':BufferLineCycleNext<CR>', n_opts)
+keymap.set('n', 'bh', ':BufferLineCyclePrev<CR>', n_opts)
+keymap.set('n', 'b<Right>', ':BufferLineMoveNext<CR>', n_opts)
+keymap.set('n', 'b<Left>', ':BufferLineMovePrev<CR>', n_opts)
+keymap.set('n', 'bd', ':bdelete!<CR>', n_opts)
 
 -- terminal mode
 keymap.set('t', '<esc>', '<C-\\><C-N>', t_opts)
+
+-- format code
+keymap.set('n', 'F', ':Neoformat<CR>', t_opts)
