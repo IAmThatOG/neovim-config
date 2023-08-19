@@ -4,7 +4,7 @@ vim.opt.cursorline = true
 
 -- line numbers
 vim.opt.nu = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 
 -- tabs
 vim.tabstop = 2

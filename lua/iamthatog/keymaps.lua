@@ -47,6 +47,13 @@ keymap.set("n", "<C-u>", "<C-u>zz", n_opts) -- jump lines up
 keymap.set("n", "n", "nzzzv", n_opts) -- move up to occurences of search word
 keymap.set("n", "N", "Nzzzv", n_opts) -- move down to occurences of search word
 
+-- keymap.set("x", "p", "\"_dp") -- to continue pasting last copied tet
+
+keymap.set("n", "Q", "<nop>", n_opts)
+
+keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- for replacing current character under cursor in file
+
+
 -- others
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", n_opts) -- split window vertically
