@@ -88,8 +88,6 @@ return require('packer').startup(function(use)
     },
   }) -- enhanced lsp uis
 
-  use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
-
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
   -- treesitter configuration for syntax highlighting
@@ -120,7 +118,10 @@ return require('packer').startup(function(use)
     requires = 'nvim-tree/nvim-web-devicons',
   }
 
+  -- for applying formatters
   use 'sbdchd/neoformat'
+
+  use 'ThePrimeagen/harpoon'
 
 end)
 
