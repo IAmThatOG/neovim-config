@@ -49,18 +49,22 @@ cmp.setup({
   -- sources for autocompletion
   sources = cmp.config.sources({
     { name = "nvim_lsp" }, -- lsp
-    { name = "luasnip" }, -- snippets
-    { name = "buffer" }, -- text within current buffer
-    { name = "path" }, -- file system paths
+    { name = "luasnip" }, -- snippets 
+  }, {
+    { name = "buffer" },   -- text within current buffer
+    { name = "path" },     -- file system paths
   }),
   -- configure lspkind for vs-code like icons
   formatting = {
     format = lspkind.cmp_format({
+      mode = 'text_symbol',
       maxwidth = 50,
       ellipsis_char = '...',
+
+      before = function (entry, vim_item)
+        return vim_item
+      end
     }),
   },
 })
-
--- return cmp_mapping
 
