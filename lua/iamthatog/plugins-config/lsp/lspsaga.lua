@@ -10,12 +10,45 @@ saga.setup({
   scroll_preview = { scroll_down = "<C-f>", scroll_up = "<C-b>" },
   -- use enter to open file with definition preview
   definition = {
-    edit = "<CR>",
+    keys = {
+      edit = '<CR>',
+      quit = '<ESC>',
+      close = '<ESC>',
+    },
   },
   ui = {
     colors = {
       normal_bg = "#022746",
     },
   },
+  finder = {
+    keys = {
+      shuttle = '<C-w>',
+      quit = '<ESC>',
+      close = '<ESC>',
+      toggle_or_open = '<CR>'
+    },
+  },
+  symbol_in_winbar = {
+    folder_level = 4,
+  },
+  outline = {
+    keys = {
+      toggle_or_jump = '<CR>',
+      quit = '<ESC>',
+      jump = '<C-d>',
+    },
+  },
+  rename = {
+    keys = {
+      quit = '<ESC>',
+    },
+  },
+  diagnostic = {
+    keys = {
+      quit = '<ESC>',
+      exec_action = '<CR>',
+      toggle_or_jump = 'e',
+    }
+  }
 })
-

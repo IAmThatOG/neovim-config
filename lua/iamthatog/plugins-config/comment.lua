@@ -6,4 +6,3 @@ if not setup then
 end
 
 comment.setup()
-print('Comment plugin set')

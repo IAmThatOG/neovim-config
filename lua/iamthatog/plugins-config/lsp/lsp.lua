@@ -90,7 +90,9 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "gf", "<cmd>Lspsaga finder<CR>", opts) -- show definition, references
   keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- got to declaration
   -- keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
-  keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  -- keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  keymap.set('n', 'gd', '<cmd>Lspsaga goto_definition<CR>', opts)
+  keymap.set('n', 'pd', '<cmd>Lspsaga peek_definition<CR>', opts)
   keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- go to implementation
   keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   keymap.set({'n', 'i'}, '<C-h>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
@@ -106,8 +108,8 @@ local on_attach = function(client, bufnr)
   -- keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
   keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
   -- keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-  keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand sides
-  keymap.set('n', '<C-m>', ":Mason<CR>", opts) -- to open Mason for lsps installation
+  keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts) -- see outline on right hand side
+  keymap.set('n', '<C-m>', "<cmd>Mason<CR>", opts) -- to open Mason for lsps installation
 
   -- typescript specific keymaps (e.g. rename file and update imports)
   -- if client.name == "tsserver" then

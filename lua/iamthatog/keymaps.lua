@@ -33,6 +33,9 @@ else
 
   -- Lists searches that were executed recently, and reruns them on <cr>
   keymap.set('n', '<leader>fs', builtin.search_history, n_opts)
+
+  -- Open telescope file explorer to browse files
+  keymap.set('n', '<leader>e', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', n_opts)
 end
 
 -- The Primeagen maps
@@ -68,7 +71,7 @@ keymap.set("n", "<leader>tn", ":tabn<CR>", n_opts) --  go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>", n_opts) --  go to previous tab
 
 -- toggle nvim-tree
-keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', n_opts)
+-- keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', n_opts)
 
 -- gitsigns
 keymap.set('n', '<leader>gs', ':Gitsigns<leader>', n_opts)
@@ -85,3 +88,7 @@ keymap.set('t', '<esc>', '<C-\\><C-N>', t_opts)
 
 -- format code
 keymap.set('n', 'F', ':Neoformat<CR>', t_opts)
+
+-- prevent copy on delete
+keymap.set('n', 'd', '"_x');
+keymap.set('v', 'd', '"_x');

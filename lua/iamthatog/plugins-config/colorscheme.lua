@@ -67,5 +67,4 @@ function ColorMyPencils(color)
 end
 
 ColorMyPencils('rose-pine')
-print('Color scheme set')
 

@@ -32,7 +32,11 @@ return require('packer').startup(function(use)
   use 'nvim-lua/plenary.nvim'
 
   -- file explorer
-  use 'nvim-tree/nvim-tree.lua'
+  -- use 'nvim-tree/nvim-tree.lua'
+  use {
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  }
 
   -- file icons
   use 'nvim-tree/nvim-web-devicons'
@@ -41,12 +45,20 @@ return require('packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'
 
   -- telescope sorter
-  -- use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- fuzzy finder
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
     requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
+  -- for clipboard
+  use {
+    "AckslD/nvim-neoclip.lua",
+    requires = {
+      {'nvim-telescope/telescope.nvim'},
+    },
   }
 
   -- autocompletion
@@ -102,6 +114,7 @@ return require('packer').startup(function(use)
   use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
   use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
+  -- for git manipulations on IDE
   use {
     'lewis6991/gitsigns.nvim',
     -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
