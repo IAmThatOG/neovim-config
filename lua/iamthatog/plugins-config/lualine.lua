@@ -1,13 +1,13 @@
-local setup, lualine = pcall(require, 'lualine')
+local lualine_setup, lualine = pcall(require, 'lualine')
 
-if not setup then
+if not lualine_setup then
   print('lualine plugin not installed')
   return
 end
 
 lualine.setup {
   options = {
-    theme = 'rose-pine'
+    theme = 'nord'
   }
 }
 

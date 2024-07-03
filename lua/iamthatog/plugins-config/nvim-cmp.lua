@@ -49,8 +49,8 @@ cmp.setup({
   -- sources for autocompletion
   sources = cmp.config.sources({
     { name = "nvim_lsp" }, -- lsp
-    { name = "luasnip" }, -- snippets 
-  }, {
+    { name = "luasnip" }, -- snippets
+    {name = "nvim_lsp_signature_help"}, -- function signatures
     { name = "buffer" },   -- text within current buffer
     { name = "path" },     -- file system paths
   }),

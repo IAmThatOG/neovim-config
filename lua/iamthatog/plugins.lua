@@ -12,13 +12,15 @@ vim.cmd([[
 ]])
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
+  -- Package Installer, Packer can manage itself
   use 'wbthomason/packer.nvim'
 
   -- current editor theme
   -- use 'shaunsingh/moonlight.nvim'
   -- use 'folke/tokyonight.nvim'
-  use({ 'rose-pine/neovim', as = 'rose-pine' })
+  -- use({ 'rose-pine/neovim', as = 'rose-pine' })
+  -- use 'shaunsingh/nord.nvim'
+  use 'gbprod/nord.nvim'
 
   use 'christoomey/vim-tmux-navigator'
 
@@ -49,7 +51,7 @@ return require('packer').startup(function(use)
 
   -- fuzzy finder
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    'nvim-telescope/telescope.nvim', tag = '0.1.6',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
@@ -65,6 +67,7 @@ return require('packer').startup(function(use)
   use("hrsh7th/nvim-cmp") -- completion plugin
   use("hrsh7th/cmp-buffer") -- source for text in buffer
   use("hrsh7th/cmp-path") -- source for file system paths
+  use("hrsh7th/cmp-nvim-lsp-signature-help") -- function signatures
 
   -- snippets
   use("L3MON4D3/LuaSnip") -- snippet engine

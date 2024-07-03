@@ -195,10 +195,15 @@ lspconfig["prismals"].setup({
   on_attach = on_attach,
 })
 
--- configure csharp language server
-lspconfig["csharp_ls"].setup({
+-- configure omnisharp
+lspconfig["omnisharp"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
+  enable_roslyn_analysers = true,
+  enable_import_completion = true,
+  organize_imports_on_format = true,
+  enable_decompilation_support = true,
+  filetypes = { 'cs', 'vb', 'csproj', 'sln', 'slnx', 'props', 'csx', 'targets' }
 })
 
 -- configure pylsp server
@@ -222,11 +227,6 @@ lspconfig['pylsp'].setup({
     }
   }
 })
-
-
--- (Optional) Configure lua language server for neovim;
--- already configured above
--- require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 lsp.setup()
 
