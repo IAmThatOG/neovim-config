@@ -25,24 +25,19 @@ telescope.setup({
     },
     pickers = {
         find_files = {
-            hidden = true,
+            hidden = false,
         },
     },
     -- configure custom mappings
     defaults = {
         mappings = {
             i = {
-                -- ["<C-k>"] = actions.move_selection_previous, -- move to prev result
-                -- ["<C-j>"] = actions.move_selection_next, -- move to next result
-                -- send selected to quickfixlist
-                -- ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
                 ["<C-h>"] = "which_key",
             },
         },
     },
 })
 
--- telescope.load_extension("fzf")
 telescope.load_extension("file_browser")
 telescope.load_extension("fzf")
 telescope.load_extension("harpoon")
