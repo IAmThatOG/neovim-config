@@ -56,4 +56,3 @@ vim.opt.iskeyword:append("-")
 
 -- keymap
 vim.g.mapleader = " "
-
