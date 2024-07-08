@@ -14,10 +14,7 @@ return {
     "onsails/lspkind.nvim", -- vscode-like autocompletions
     { -- syntax highlighting
         "nvim-treesitter/nvim-treesitter",
-        build = function()
-            local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-            ts_update()
-        end,
+        build = ":TSUpdate",
     },
     { -- autoclose tags
         "windwp/nvim-ts-autotag",

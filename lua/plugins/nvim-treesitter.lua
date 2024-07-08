@@ -19,7 +19,7 @@ treesitter.setup({
     -- enable indentation
     indent = { enable = true },
     -- enable autotagging (w/ nvim-ts-autotag plugin)
-    autotag = { enable = true },
+    -- autotag = { enable = true }, 
     -- ensure these language parsers are installed
     -- ensure_installed = {
     --   "c",
@@ -46,3 +46,5 @@ treesitter.setup({
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
 })
+
+

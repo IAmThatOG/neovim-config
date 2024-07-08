@@ -13,6 +13,7 @@ require("plugins.lsp.mason")
 require("plugins.lsp.lspsaga")
 require("plugins.nvm-autopairs")
 require("plugins.nvim-treesitter")
+require("plugins.nvim-ts-autotag")
 require("plugins.gitsigns")
 require("plugins.bufferline")
 
