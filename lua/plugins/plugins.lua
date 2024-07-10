@@ -40,6 +40,12 @@ return {
         version = "*",
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
+    {
+        "L3MON4D3/LuaSnip",
+        tag = "v2.3.0",
+        dependencies = { "rafamadriz/friendly-snippets" },
+        run = "make install_jsrgexp",
+    },
     { -- lsp config
         "VonHeikemen/lsp-zero.nvim",
         branch = "v3.x",
