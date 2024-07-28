@@ -44,7 +44,7 @@ return {
         "L3MON4D3/LuaSnip",
         tag = "v2.3.0",
         dependencies = { "rafamadriz/friendly-snippets" },
-        run = "make install_jsrgexp",
+        build = "make install_jsregexp",
     },
     { -- lsp config
         "VonHeikemen/lsp-zero.nvim",
