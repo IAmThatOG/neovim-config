@@ -16,6 +16,7 @@ require("plugins.nvim-treesitter")
 require("plugins.nvim-ts-autotag")
 require("plugins.gitsigns")
 require("plugins.bufferline")
+require("plugins.luasnip")
 
 print("=========== Hello OG! ===========")
 print("• Check out your todos ✅ ")
